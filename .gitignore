@@ -13,6 +13,12 @@ Assets/AddressableAssetsData/*/*.bin*
 Assets/StreamingAssets/aa.meta
 Assets/StreamingAssets/aa/
 
+# TextMesh Pro assets
+Assets/TextMesh Pro/
+Assets/TextMesh Pro.meta
+Assets/TMPro/
+Assets/TMPro.meta
+
 # Auto-generated VS/JetBrains files
 .vs/
 .idea/
