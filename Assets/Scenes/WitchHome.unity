@@ -306,6 +306,7 @@ MonoBehaviour:
   move: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   interact: {fileID: 1781555164194001046, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   currentInteractble: {fileID: 0}
+  dialogueManager: {fileID: 2112330658}
 --- !u!70 &225802064
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1672,8 +1673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2417768aebbac9240a4420d1dcdd6f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueBox: {fileID: 1262809015}
-  nameDialogueBox: {fileID: 884230197}
+  dialogueHolder: {fileID: 1501124107}
   dialogue: {fileID: 349160071}
   dialogueName: {fileID: 949365262}
   characterImage1: {fileID: 2112172937}

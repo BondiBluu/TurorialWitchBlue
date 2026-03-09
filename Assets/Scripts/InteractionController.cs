@@ -3,10 +3,18 @@ using UnityEngine;
 public class InteractionController : MonoBehaviour
 {
     private bool playerInRange;
+    private DialogueManager dialogueManager;
 
-    public string DisplayMessage()
+    void Start()
     {
-        return "Message here.";
+        dialogueManager = FindAnyObjectByType<DialogueManager>();
+    }
+
+
+    public void DisplayMessage()
+    {
+        dialogueManager.TurnOnDialogue();
+        dialogueManager.dialogue.text = "Message here.";
     }
 
     void OnTriggerEnter2D(Collider2D collision)

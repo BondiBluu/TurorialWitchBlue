@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private InputActionReference interact;
     public InteractionController currentInteractble;
+    public DialogueManager dialogueManager;
+
 
 
     private void Start()
@@ -46,9 +48,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnInteract(InputAction.CallbackContext context)
     {
+        if (dialogueManager.IsDialogueActive())
+        {
+            dialogueManager.TurnOffDialogue();
+            return;
+        }
+
         if(currentInteractble != null)
         {
             Debug.Log("Pressed.");
+            currentInteractble.DisplayMessage();
         }
     }
 }
