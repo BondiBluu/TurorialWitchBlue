@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Interaction")]
 
     [SerializeField] private InputActionReference interact;
-    public InteractionController currentInteractble;
+    public Interaction currentInteractble;
     public DialogueManager dialogueManager;
 
 

@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class InteractionController : MonoBehaviour
+public class Interaction : MonoBehaviour
 {
     private bool playerInRange;
     private DialogueManager dialogueManager;
+    public DialogueSO objectDialogue;
 
     void Start()
     {

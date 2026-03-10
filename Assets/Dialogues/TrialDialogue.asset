@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7122cead2e48048a6e9869efef4a86, type: 3}
+  m_Name: TrialDialogue
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: Person 1
+    dialogueText: Test 1
+    characterSprite1: {fileID: -5274119312554391685, guid: d5d3e4e193e02d14988b75314e9e6a94, type: 3}
+    characterSprite2: {fileID: 0}
+  - speaker: Person 2
+    dialogueText: Test 2
+    characterSprite1: {fileID: 0}
+    characterSprite2: {fileID: -5274119312554391685, guid: d5d3e4e193e02d14988b75314e9e6a94, type: 3}
+  - speaker: Person 3
+    dialogueText: Test 3
+    characterSprite1: {fileID: -5274119312554391685, guid: d5d3e4e193e02d14988b75314e9e6a94, type: 3}
+    characterSprite2: {fileID: -1713227118171723934, guid: c49fc4042234bc949ac6f46a7dd29ffc, type: 3}
