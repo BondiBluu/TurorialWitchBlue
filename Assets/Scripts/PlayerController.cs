@@ -50,14 +50,15 @@ public class PlayerController : MonoBehaviour
     {
         if (dialogueManager.IsDialogueActive())
         {
-            dialogueManager.TurnOffDialogue();
+            dialogueManager.NextLine();
             return;
         }
 
         if(currentInteractble != null)
         {
             Debug.Log("Pressed.");
-            currentInteractble.DisplayMessage();
+            currentInteractble.PlayDialogue();
+            
         }
     }
 }

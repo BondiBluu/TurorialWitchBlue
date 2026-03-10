@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Interaction : MonoBehaviour
 {
@@ -11,11 +12,10 @@ public class Interaction : MonoBehaviour
         dialogueManager = FindAnyObjectByType<DialogueManager>();
     }
 
-
-    public void DisplayMessage()
+    public void PlayDialogue()
     {
-        dialogueManager.TurnOnDialogue();
-        dialogueManager.dialogue.text = "Message here.";
+        dialogueManager.StartDialogue(objectDialogue);
+         
     }
 
     void OnTriggerEnter2D(Collider2D collision)
