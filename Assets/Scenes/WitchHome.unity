@@ -1220,7 +1220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneChange: {fileID: 11400000, guid: 0cbd743a54c52e441a2913407e4dc573, type: 2}
-  sceneName: Outside
+  playerPosition: {x: 8.11, y: 0}
 --- !u!212 &1023586874
 SpriteRenderer:
   m_ObjectHideFlags: 0

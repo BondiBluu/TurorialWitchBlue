@@ -11,6 +11,7 @@ public class ChangeScene : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            collision.transform.position = playerPosition;
             SceneManager.LoadScene(sceneChange.SceneName);
         }
     }
