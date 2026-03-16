@@ -21,6 +21,11 @@ public class PlayerController : MonoBehaviour
     
     void Awake()
     {
+        if(FindAnyObjectByType<PlayerController>() != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         //don't destroy the player object when loading a new scene
         DontDestroyOnLoad(gameObject);
     }
