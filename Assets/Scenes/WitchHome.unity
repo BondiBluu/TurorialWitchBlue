@@ -1219,6 +1219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac54f660e2f7ac249b3ca13896c74974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneChange: {fileID: 11400000, guid: 0cbd743a54c52e441a2913407e4dc573, type: 2}
+  sceneName: Outside
 --- !u!212 &1023586874
 SpriteRenderer:
   m_ObjectHideFlags: 0

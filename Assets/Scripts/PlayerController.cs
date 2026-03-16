@@ -18,7 +18,12 @@ public class PlayerController : MonoBehaviour
     public Interaction currentInteractble;
     public DialogueManager dialogueManager;
 
-
+    
+    void Awake()
+    {
+        //don't destroy the player object when loading a new scene
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
