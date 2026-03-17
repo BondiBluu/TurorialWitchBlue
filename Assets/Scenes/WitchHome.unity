@@ -965,7 +965,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.282}
   m_AnchorMax: {x: 0.33157864, y: 0.466228}
-  m_AnchoredPosition: {x: -4.5265503, y: 5.0371704}
+  m_AnchoredPosition: {x: -4.5264893, y: 5.0371704}
   m_SizeDelta: {x: -44.882324, y: -34.872498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &884230199
@@ -1522,6 +1522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2417768aebbac9240a4420d1dcdd6f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueCanvas: {fileID: 1890706924}
   dialogueHolder: {fileID: 1501124107}
   dialogue: {fileID: 349160071}
   dialogueName: {fileID: 949365262}

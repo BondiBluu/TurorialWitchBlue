@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private static PlayerController instance;
+
     [Header("Player Movement")]
 
     private Rigidbody2D rb;
@@ -21,11 +23,13 @@ public class PlayerController : MonoBehaviour
     
     void Awake()
     {
-        if(FindAnyObjectByType<PlayerController>() != this)
+        if(instance != null && instance != this)
         {
             Destroy(gameObject);
             return;
         }
+
+        instance = this;
         //don't destroy the player object when loading a new scene
         DontDestroyOnLoad(gameObject);
     }

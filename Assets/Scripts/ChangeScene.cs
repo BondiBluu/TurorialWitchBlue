@@ -11,8 +11,17 @@ public class ChangeScene : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.transform.position = playerPosition;
+            //firing this once the scene is loaded
+            SceneManager.sceneLoaded += OnSceneLoaded;
             SceneManager.LoadScene(sceneChange.SceneName);
         }
+    }
+
+    //when the scene is loaded, move the player's position to the playerPosition
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        player.transform.position = playerPosition;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

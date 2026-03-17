@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField] private Canvas dialogueCanvas;
     [SerializeField] private GameObject dialogueHolder;
     public TMP_Text dialogue;
     public TMP_Text dialogueName;
@@ -16,10 +17,23 @@ public class DialogueManager : MonoBehaviour
     public DialogueSO currentDialogue;
     public int currentIndex;
 
+    private static DialogueManager instance;
 
     void Awake()
     {
+
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(dialogueCanvas.gameObject);
+
         TurnOffDialogue();
+
     }
 
     public void StartDialogue(DialogueSO chosenDialogue)
