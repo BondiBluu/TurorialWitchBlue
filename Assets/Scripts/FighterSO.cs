@@ -4,34 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Fighter", menuName = "Scriptable Objects/Fighter")]
 public class FighterSO : ScriptableObject
 {
-     public enum ElementType
-    {
-        Fire,
-        Water,
-        Grass,
-        Electric,
-        Ice,
-        Null,
-        Gold
-    }
-
-    public enum CharacterStatusEffects
-    {
-        None,
-        Burn,
-        Wet,
-        Hay,
-        Shock,
-        Freeze
-    }
-
-    public enum CharacterAlliance
-    {
-        Player,
-        Enemy,
-        Familiar
-    }
-
     [SerializeField] private int level;
     [SerializeField] private ElementType attribute;
     [SerializeField] private int hp;
