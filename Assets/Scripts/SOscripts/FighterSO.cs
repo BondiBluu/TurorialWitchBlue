@@ -5,6 +5,7 @@ using UnityEngine;
 public class FighterSO : ScriptableObject
 {
     [SerializeField] private string characterName;
+    [SerializeField] private Sprite characterSprite;
     [SerializeField] private int level;
     [SerializeField] private ElementType attribute;
     [SerializeField] private int hp;

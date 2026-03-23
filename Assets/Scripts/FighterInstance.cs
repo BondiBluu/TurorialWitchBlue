@@ -16,6 +16,7 @@ public class FighterInstance
     public FighterInstance(FighterSO data)
     {
         baseData = data;
+        
         currentLevel = data.Level;
         currentHP = data.HP;
         currentMP = data.MP;
