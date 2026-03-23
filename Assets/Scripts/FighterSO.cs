@@ -25,6 +25,13 @@ public class FighterSO : ScriptableObject
         Freeze
     }
 
+    public enum CharacterAlliance
+    {
+        Player,
+        Enemy,
+        Familiar
+    }
+
     [SerializeField] private int level;
     [SerializeField] private ElementType attribute;
     [SerializeField] private int hp;
@@ -35,8 +42,9 @@ public class FighterSO : ScriptableObject
     [SerializeField] private List<CharacterStatusEffects> statusEffects;
     [SerializeField] private List<ElementType> resistances;
     [SerializeField] private List<ElementType> immunities;
+    [SerializeField] private CharacterAlliance alignment;
 
-    //shorthand getters
+    //shorthand for getters
     public int Level => level;
     public ElementType Attribute => attribute;
     public int HP => hp;
@@ -47,4 +55,5 @@ public class FighterSO : ScriptableObject
     public List<CharacterStatusEffects> StatusEffects => statusEffects;
     public List<ElementType> Resistances => resistances;
     public List<ElementType> Immunities => immunities;
+    public CharacterAlliance Alignment => alignment;
 }

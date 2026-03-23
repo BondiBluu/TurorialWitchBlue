@@ -5,6 +5,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private static PlayerController instance;
+    
+    //getting the character's base data
+    [SerializeField] FighterSO playerData;
+
+    //grabbing the runtime copy of the character's current state during gameplay
+    public FighterInstance fighterInstance;
 
     [Header("Player Movement")]
 
@@ -36,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        fighterInstance = new FighterInstance(playerData);
         rb = GetComponent<Rigidbody2D>();
     }
 
