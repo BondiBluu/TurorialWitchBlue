@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Outside.unity
     guid: 66edc7b4cbaf82e44aec0aec3efef7bf
+  - enabled: 1
+    path: Assets/Scenes/FightStage.unity
+    guid: 58ebabfcf3d8929469491c6cc5dd9e07
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
