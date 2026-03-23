@@ -1,6 +1,6 @@
  public enum CharacterAlliance
-    {
-        Player,
+    {       
         Enemy,
-        Familiar
+        Familiar,
+         Player
     }

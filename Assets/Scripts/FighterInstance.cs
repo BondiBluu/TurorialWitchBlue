@@ -11,6 +11,7 @@ public class FighterInstance
     public int currentAttack;
     public int currentDefense;
     public int currentSpeed;
+    public List<CharacterStatusEffects> characterStatusEffects;
 
     public FighterInstance(FighterSO data)
     {
@@ -21,5 +22,6 @@ public class FighterInstance
         currentAttack = data.Attack;
         currentDefense = data.Defense;
         currentSpeed = data.Speed;
+        characterStatusEffects = new List<CharacterStatusEffects>();
     }
 }
