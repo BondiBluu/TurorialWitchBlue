@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     //getting the character's base data
     [SerializeField] FighterSO playerData;
 
-    //grabbing the runtime copy of the character's current state during gameplay
+    //the data for the character. Can freely make changes to the character's stats when they level up
     public FighterInstance fighterInstance;
 
     [Header("Player Movement")]

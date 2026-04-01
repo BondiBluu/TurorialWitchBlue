@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//this script is a runtime class that holds the state of the characters. Character stats are changed through here.
+//Every character that levels up should have this. 
 public class FighterInstance
 {
     public FighterSO baseData;
@@ -13,6 +15,7 @@ public class FighterInstance
     public int currentSpeed;
     public List<CharacterStatusEffects> characterStatusEffects;
 
+    //copies the base stats from the FighterSO. These are where the base stats start.
     public FighterInstance(FighterSO data)
     {
         baseData = data;
