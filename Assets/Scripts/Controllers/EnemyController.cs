@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
-    public List<FighterSO> enemyList;
+    [SerializeField] private FighterSO enemyData;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
