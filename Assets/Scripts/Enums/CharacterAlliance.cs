@@ -2,5 +2,5 @@
     {       
         Enemy,
         Familiar,
-         Player
+        Player
     }

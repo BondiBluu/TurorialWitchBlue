@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b096008bbe17f468c25651fe14b17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyData: {fileID: 0}
 --- !u!58 &64707532
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1626,6 +1627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2112330657}
   - component: {fileID: 2112330658}
+  - component: {fileID: 2112330659}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -1668,6 +1670,24 @@ MonoBehaviour:
   characterImage2: {fileID: 1610071135}
   currentDialogue: {fileID: 0}
   currentIndex: 0
+--- !u!114 &2112330659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112330656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11f56eb26bf75245bef9736768b0203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guaranteedEnemy: {fileID: 0}
+  enemyList:
+  - {fileID: 11400000, guid: ec95fef50ac681a4e91b1159e178db33, type: 2}
+  - {fileID: 11400000, guid: b32adede9cb818842acb097f8c23d75c, type: 2}
+  - {fileID: 11400000, guid: 2f7194ce6ea94314a91f6acce2d693be, type: 2}
+  - {fileID: 11400000, guid: 75352bd54b82e26478f5d14c682aabf4, type: 2}
 --- !u!1001 &5390915889740536662
 PrefabInstance:
   m_ObjectHideFlags: 0
