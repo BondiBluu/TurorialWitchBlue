@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class EnemyEncounterRates : MonoBehaviour
 {
+
+    //tentative. For enemy spawn rates
     public struct EnemyEncounter
     {
         public FighterSO enemy;
