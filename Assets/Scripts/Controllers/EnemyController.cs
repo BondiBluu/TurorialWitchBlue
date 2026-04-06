@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private FighterSO enemyData;
+    private bool battleStarted = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        //using the bool to make sure the ontriggerenter2d doesn't ever trigger twice
+        if (collision.CompareTag("Player") && battleStarted == false)
         {
+            battleStarted = true;
+            EncounterManager.instance.guaranteedEnemy = enemyData;
             SceneManager.sceneLoaded += OnSceneLoaded;
             SceneManager.LoadScene("FightStage");
         }

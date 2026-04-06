@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
-    public EncounterManager encounterManager;
     private FighterSO guaranteedEnemy;
     private BattleState battleState;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        encounterManager = FindAnyObjectByType<EncounterManager>();
-        guaranteedEnemy = encounterManager.guaranteedEnemy;
+        guaranteedEnemy = EncounterManager.instance.guaranteedEnemy;
         battleState = BattleState.BATTLESTART;
         InstantiatePlayers();
     }

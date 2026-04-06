@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//this script holds the guaranteed enemy data and list of all slimes in the game to be used with Battle Manager
 public class EncounterManager : MonoBehaviour
 {
     public static EncounterManager instance;
     public FighterSO guaranteedEnemy;
-    public List<FighterSO> enemyList;
+    public List<EnemyEncounterRates> enemyList;
     //won't destroy on load
      void Awake()
     {
@@ -17,17 +18,5 @@ public class EncounterManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
