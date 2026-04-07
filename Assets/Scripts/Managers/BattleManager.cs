@@ -5,6 +5,18 @@ public class BattleManager : MonoBehaviour
     private FighterSO guaranteedEnemy;
     private BattleState battleState;
 
+    [Header("Battle Stations")]
+    [SerializeField] Transform[] playerStations;
+
+    [SerializeField] Transform[] enemyStations;
+
+    [Header("Prefabs")]
+    public GameObject playerPrefab;
+    public GameObject enemyPrefab;
+
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,8 +29,10 @@ public class BattleManager : MonoBehaviour
     {
         if(battleState == BattleState.BATTLESTART)
         {
-            Debug.Log("Battle is starting. Instantiating players.");
-            Debug.Log($"Guaranteed enemy is {guaranteedEnemy}");
+            for(int i = 0; i < 4; i++)
+            {
+                //instantiating enemies. We'll worry about instantiating them with their stats later.
+            }
         }
         
     }
