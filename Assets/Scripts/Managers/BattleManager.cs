@@ -39,16 +39,21 @@ public class BattleManager : MonoBehaviour
 
     private void CreateNumberOfEnemies()
     {
-        int numberOfenemies = UnityEngine.Random.Range(1,4);
+        int numberOfEnemies = UnityEngine.Random.Range(1,4);
+        Debug.Log("Number of enemies: " + numberOfEnemies);
 
-        for(int i = 0; i < numberOfenemies; i++)
+        for(int i = 0; i < numberOfEnemies; i++)
         {
-            Debug.Log("Number of enemies: " + numberOfenemies);
-            InstantiateFighters(enemyPrefab, enemyStations[i]);
+            if(enemyList[0])
+            {
+                //enemyPrefab.gameObject.GetComponent<FighterBattleData>().SetupData(guaranteedEnemy);
+            }
+
+            //InstantiateFighters(enemyPrefab, enemyStations[i]);
         }
     }
 
-    private void InstantiateFighters(GameObject fighter, Transform fighterPosition)
+    private void InstantiateFighters(GameObject fighter, Transform fighterPosition, FighterSO fighterData)
     {
         //instantiate whoever is there
         Debug.Log("Instantiating");
