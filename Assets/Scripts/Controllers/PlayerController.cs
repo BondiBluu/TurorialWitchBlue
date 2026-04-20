@@ -4,10 +4,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private static PlayerController instance;
+    public static PlayerController instance;
     
-    //getting the character's base data
-    [SerializeField] FighterSO playerData;
+    //all of the player's stats
+    public FighterSO playerData;
 
     //the data for the character. Can freely make changes to the character's stats when they level up
     public FighterInstance fighterInstance;

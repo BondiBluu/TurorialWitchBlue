@@ -19,6 +19,7 @@ public class BattleManager : MonoBehaviour
 
     [Header("To be deleted when testing is over")]
     public List<FighterSO> enemyList;
+    public FighterSO playerStats;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,9 +35,18 @@ public class BattleManager : MonoBehaviour
         if(battleState == BattleState.BATTLESTART)
         {
             CreateNumberOfEnemies();
+            InstantiatePlayerAndAlly();
         }  
     }
 
+    public void InstantiatePlayerAndAlly()
+    {
+        Debug.Log("Instantiating player");
+
+        GameObject friendlyGO = InstantiateFighters(playerPrefab, playerStations[0]);
+
+        friendlyGO.GetComponent<FighterBattleData>().SetupData(playerStats);                 
+    }
 
     /*create a random number of enemies
     first enemy will always be the guaranteed attribute player ran into
@@ -58,7 +68,7 @@ public class BattleManager : MonoBehaviour
             }
             else
             {
-                int randomEnemyAttribute = UnityEngine.Random.Range(0, enemyList.Count - 1);
+                int randomEnemyAttribute = UnityEngine.Random.Range(0, enemyList.Count);
                 enemyGameObject.GetComponent<FighterBattleData>().SetupData(enemyList[randomEnemyAttribute]);
             }
 

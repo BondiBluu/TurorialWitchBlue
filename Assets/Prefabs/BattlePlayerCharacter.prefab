@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2636454151441626569}
   - component: {fileID: 1092942977674384356}
+  - component: {fileID: -4139946673530014338}
   m_Layer: 0
   m_Name: BattlePlayerCharacter
   m_TagString: Untagged
@@ -91,3 +92,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4139946673530014338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717700669529687285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037b1e8c2ee09de47b88083a7ff49ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fighterData: {fileID: 11400000, guid: 9022e7df1a3f2e34bbc16919b69fc11f, type: 2}

@@ -7,6 +7,8 @@ public class FighterInstance
 {
     public FighterSO baseData;
 
+    public FighterSO currentData;
+
     public int currentLevel;
     public int currentHP;
     public int currentMP;
@@ -28,4 +30,6 @@ public class FighterInstance
         currentSpeed = data.Speed;
         characterStatusEffects = new List<CharacterStatusEffects>();
     }
+
+    
 }
