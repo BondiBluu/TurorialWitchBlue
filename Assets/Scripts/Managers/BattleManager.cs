@@ -37,26 +37,38 @@ public class BattleManager : MonoBehaviour
         }  
     }
 
+
+    /*create a random number of enemies
+    first enemy will always be the guaranteed attribute player ran into
+    all others will be random*/
     private void CreateNumberOfEnemies()
     {
         int numberOfEnemies = UnityEngine.Random.Range(1,4);
         Debug.Log("Number of enemies: " + numberOfEnemies);
+        
 
         for(int i = 0; i < numberOfEnemies; i++)
         {
-            if(enemyList[0])
+            
+            GameObject enemyGameObject =  InstantiateFighters(enemyPrefab, enemyStations[i]);
+
+            if(i == 0)
             {
-                //enemyPrefab.gameObject.GetComponent<FighterBattleData>().SetupData(guaranteedEnemy);
+                enemyGameObject.GetComponent<FighterBattleData>().SetupData(guaranteedEnemy);
+            }
+            else
+            {
+                int randomEnemyAttribute = UnityEngine.Random.Range(0, enemyList.Count - 1);
+                enemyGameObject.GetComponent<FighterBattleData>().SetupData(enemyList[randomEnemyAttribute]);
             }
 
-            //InstantiateFighters(enemyPrefab, enemyStations[i]);
         }
     }
 
-    private void InstantiateFighters(GameObject fighter, Transform fighterPosition, FighterSO fighterData)
+    private GameObject InstantiateFighters(GameObject fighter, Transform fighterPosition)
     {
         //instantiate whoever is there
         Debug.Log("Instantiating");
-        Instantiate(fighter, fighterPosition.position, Quaternion.identity, fighterPosition);
+        return Instantiate(fighter, fighterPosition.position, Quaternion.identity, fighterPosition);
     }
 }
