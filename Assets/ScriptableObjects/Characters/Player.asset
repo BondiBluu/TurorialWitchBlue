@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8915ed31a2d989647a22c67b743c37ec, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  characterName: Forget-Me-Not
+  characterName: Miss Witch
+  characterSprite: {fileID: 0}
   level: 1
   attribute: 0
   hp: 35

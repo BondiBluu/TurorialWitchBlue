@@ -5,7 +5,7 @@ using UnityEngine;
 //Every character that levels up should have this. 
 public class FighterInstance
 {
-    public FighterSO baseData;
+    public FighterSO currentData;
     public int currentLevel;
     public int currentHP;
     public int currentMP;
@@ -14,10 +14,10 @@ public class FighterInstance
     public int currentSpeed;
     public List<CharacterStatusEffects> characterStatusEffects;
 
-    //copies the base stats from the FighterSO. These are where the base stats start.
+    //copies the base stats from the FighterSO, whether base or level up stats
     public FighterInstance(FighterSO data)
     {
-        baseData = data;
+        currentData = data;
         
         currentLevel = data.Level;
         currentHP = data.HP;

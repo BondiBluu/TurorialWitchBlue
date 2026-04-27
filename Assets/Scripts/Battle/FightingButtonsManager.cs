@@ -23,7 +23,10 @@ public class FightingButtonsManager : MonoBehaviour
 
     public void OnAttackPressed(){}
     public void OnMagicPressed(){}
-    public void OnStatusPressed(){}
+    public void OnStatusPressed()
+    {
+        statusPanel.SetActive(true);
+    }
     public void OnFleePressed()
     {
         fleePanel.SetActive(true);
@@ -32,5 +35,13 @@ public class FightingButtonsManager : MonoBehaviour
     public void OnFleePressedNo()
     {
         fleePanel.SetActive(false);
+    }
+    public void OpenPanel(GameObject panel)
+    {
+        panel.SetActive(true);
+    }
+    public void ClosePanel(GameObject panel)
+    {
+        panel.SetActive(false);
     }
 }
