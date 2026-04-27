@@ -6,6 +6,7 @@ public class EncounterManager : MonoBehaviour
 {
     public static EncounterManager instance;
     public FighterSO guaranteedEnemy;
+    public FighterInstance playerData;
     public List<EnemyEncounterRates> enemyList;
     //won't destroy on load
      void Awake()

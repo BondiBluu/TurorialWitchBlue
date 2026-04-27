@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
         {
             battleStarted = true;
             EncounterManager.instance.guaranteedEnemy = enemyData;
+            EncounterManager.instance.playerData = PlayerController.instance.fighterInstance;
             SceneManager.sceneLoaded += OnSceneLoaded;
             SceneManager.LoadScene("FightStage");
         }

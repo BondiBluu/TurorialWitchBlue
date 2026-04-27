@@ -6,9 +6,6 @@ using UnityEngine;
 public class FighterInstance
 {
     public FighterSO baseData;
-
-    public FighterSO currentData;
-
     public int currentLevel;
     public int currentHP;
     public int currentMP;

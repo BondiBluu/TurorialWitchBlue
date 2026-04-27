@@ -26,6 +26,7 @@ public class BattleManager : MonoBehaviour
     {
         //To be added in when testing in Fight Stage scene concludes
         //guaranteedEnemy = EncounterManager.instance.guaranteedEnemy;
+        //FighterInstance playerInstance = EncounterManager.instance.playerData;
         battleState = BattleState.BATTLESTART;
         SetupBattle();
     }
