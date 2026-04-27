@@ -5,6 +5,7 @@ using System;
 
 public class BattleManager : MonoBehaviour
 {
+    CharacterStatusManager characterStatusManager;
     [SerializeField] FighterSO guaranteedEnemy;
     private BattleState battleState;
 
@@ -27,8 +28,15 @@ public class BattleManager : MonoBehaviour
         //To be added in when testing in Fight Stage scene concludes
         //guaranteedEnemy = EncounterManager.instance.guaranteedEnemy;
         //FighterInstance playerInstance = EncounterManager.instance.playerData;
+        characterStatusManager = FindAnyObjectByType<CharacterStatusManager>();
         battleState = BattleState.BATTLESTART;
         SetupBattle();
+        SetUpCharacterStats();
+    }
+
+    public void SetUpCharacterStats()
+    {
+        characterStatusManager.BattleStartStats(playerStats);
     }
 
     private void SetupBattle()
