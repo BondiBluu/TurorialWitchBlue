@@ -7,6 +7,7 @@ public class FightingButtonsManager : MonoBehaviour
     [SerializeField] Button magicSkillButton; //magical attack. drains MP
     [SerializeField] Button statusButton;
     [SerializeField] Button fleeButton;
+    [SerializeField] GameObject magicPanel;
     [SerializeField] GameObject statusPanel;
     [SerializeField] GameObject fleePanel;
  
@@ -19,22 +20,33 @@ public class FightingButtonsManager : MonoBehaviour
     {
         statusPanel.SetActive(false);
         fleePanel.SetActive(false);
+        magicPanel.SetActive(false);
     }
 
-    public void OnAttackPressed(){}
-    public void OnMagicPressed(){}
+    public void OnAttackPressed()
+    {
+        //TODO: bring up enemy buttons to attack
+    }
+    public void OnMagicPressed()
+    {
+        OpenPanel(magicPanel);
+        //TODO: generate buttons for character moves
+    }
     public void OnStatusPressed()
     {
         statusPanel.SetActive(true);
     }
     public void OnFleePressed()
     {
-        fleePanel.SetActive(true);
+        OpenPanel(fleePanel);
     }
-    public void OnFleePressedYes(){    }
+    public void OnFleePressedYes()
+    {
+        
+    }
     public void OnFleePressedNo()
     {
-        fleePanel.SetActive(false);
+        ClosePanel(fleePanel);
     }
     public void OpenPanel(GameObject panel)
     {
