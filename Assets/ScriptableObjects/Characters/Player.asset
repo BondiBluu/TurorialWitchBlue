@@ -21,6 +21,12 @@ MonoBehaviour:
   attack: 12
   defense: 15
   speed: 10
+  moveset:
+  - {fileID: 11400000, guid: b0a81a1f5c37810409e950c55b4ccf81, type: 2}
+  - {fileID: 11400000, guid: 7466a0858c99c184e9968768b46e7570, type: 2}
+  - {fileID: 11400000, guid: c61f698fb910ea442abc757c18e95c4b, type: 2}
+  - {fileID: 11400000, guid: eab56a00fb7264a4cae85e34cbceae94, type: 2}
+  - {fileID: 11400000, guid: b5abdfc00a372374ea567b79f900df48, type: 2}
   resistances: 
   immunities: 
   alignment: 2

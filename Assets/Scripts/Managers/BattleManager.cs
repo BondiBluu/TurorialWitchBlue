@@ -60,6 +60,7 @@ public class BattleManager : MonoBehaviour
                 friendlyGO.GetComponent<FighterBattleData>().SetupData(playerStats);   
                 break;
             case CharacterAlliance.Familiar:
+                CreateFamiliar();
                 break;
         }
         
@@ -67,7 +68,19 @@ public class BattleManager : MonoBehaviour
     }
 
     //TODO: see if any player station is full. If not, make that  where the next familiar goes
-    private void CreateFamiliar(){}
+    public void CreateFamiliar()
+    {
+        foreach(Transform station in playerStations)
+        {
+            if(station != null && station.childCount == 0)
+            {
+                GameObject friendlyGO = InstantiateFighters(playerPrefab, station);
+                friendlyGO.GetComponent<FighterBattleData>().SetupData(familiarList[0]);  
+                break;
+            }
+        }
+         
+    }
 
     /*create a random number of enemies
     first enemy will always be the guaranteed attribute player ran into

@@ -13,6 +13,7 @@ public class FighterSO : ScriptableObject
     [SerializeField] private int attack;
     [SerializeField] private int defense;
     [SerializeField] private int speed;
+    [SerializeField] private List<MoveSO> moveset;
     [SerializeField] private List<ElementType> resistances;
     [SerializeField] private List<ElementType> immunities;
     [SerializeField] private CharacterAlliance alignment;
@@ -26,6 +27,7 @@ public class FighterSO : ScriptableObject
     public int Attack => attack;
     public int Defense => defense;
     public int Speed => speed;
+    public List<MoveSO> Moveset => moveset;
     public List<ElementType> Resistances => resistances;
     public List<ElementType> Immunities => immunities;
     public CharacterAlliance Alignment => alignment;
