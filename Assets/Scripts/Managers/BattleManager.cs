@@ -2,6 +2,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Security.Cryptography;
 
 public class BattleManager : MonoBehaviour
 {
@@ -44,18 +45,27 @@ public class BattleManager : MonoBehaviour
         if(battleState == BattleState.BATTLESTART)
         {
             CreateNumberOfEnemies();
-            InstantiatePlayerAndAlly();
+            InstantiatePlayerAndAlly(playerStats);
         }  
     }
 
-    public void InstantiatePlayerAndAlly()
+    public void InstantiatePlayerAndAlly(FighterSO fighter)
     {
-        Debug.Log("Instantiating player");
-
-        GameObject friendlyGO = InstantiateFighters(playerPrefab, playerStations[0]);
-
-        friendlyGO.GetComponent<FighterBattleData>().SetupData(playerStats);                 
+        switch (fighter.Alignment)
+        {
+            case CharacterAlliance.Player:
+                GameObject friendlyGO = InstantiateFighters(playerPrefab, playerStations[0]);
+                friendlyGO.GetComponent<FighterBattleData>().SetupData(playerStats);   
+                break;
+            case CharacterAlliance.Familiar:
+                break;
+        }
+        
+        Debug.Log("Instantiating player");                
     }
+
+    //TODO: see if any player station is full. If not, make that  where the next familiar goes
+    private void CreateFamiliar(){}
 
     /*create a random number of enemies
     first enemy will always be the guaranteed attribute player ran into
