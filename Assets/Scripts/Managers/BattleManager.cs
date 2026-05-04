@@ -8,6 +8,8 @@ public class BattleManager : MonoBehaviour
 {
     CharacterStatusManager characterStatusManager;
     [SerializeField] FighterSO guaranteedEnemy;
+    public List<FighterSO> familiarList;
+
     private BattleState battleState;
 
     [Header("Battle Stations")]
