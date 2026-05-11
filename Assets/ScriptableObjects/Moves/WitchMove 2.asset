@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: Witch Attack 2
   moveDesc: 
-  moveLevelLearned: 3
-  moveElement: 1
+  moveLevelLearned: 1
   attackAmount: 3
   magicPointsNeeded: 0

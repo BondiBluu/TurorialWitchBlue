@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 45855580}
   - component: {fileID: 45855581}
   - component: {fileID: 45855582}
+  - component: {fileID: 45855583}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -241,13 +242,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6985173981493594c890c0c58198c6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magicAttackPanel: {fileID: 2118301164}
   magicDescPanel: {fileID: 1690131242}
   moveName: {fileID: 2017436722}
   movePwr: {fileID: 231500120}
   moveElement: {fileID: 1427939448}
   moveDesc: {fileID: 2007852645}
   moveMP: {fileID: 1175872023}
+--- !u!114 &45855583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45855576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e5d978928164e4f83c5c961a333a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSO: {fileID: 11400000, guid: 9022e7df1a3f2e34bbc16919b69fc11f, type: 2}
 --- !u!1 &59633788
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,11 +818,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 45855580}
         m_TargetAssemblyTypeName: FightingButtonsManager, Assembly-CSharp
-        m_MethodName: OnFleePressed
-        m_Mode: 1
+        m_MethodName: OpenPanel
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2147270137}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1664,7 +1677,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 45855580}
         m_TargetAssemblyTypeName: FightingButtonsManager, Assembly-CSharp
-        m_MethodName: OnMagicPressed
+        m_MethodName: OpenPanel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2118301164}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 45855582}
+        m_TargetAssemblyTypeName: MoveManager, Assembly-CSharp
+        m_MethodName: DisplayMoves
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2495,7 +2520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.6444549}
   m_AnchorMax: {x: 0.48189068, y: 1}
-  m_AnchoredPosition: {x: 4.839966, y: 0.3697815}
+  m_AnchoredPosition: {x: 4.840027, y: 0.3697815}
   m_SizeDelta: {x: -59.68, y: -7.6613}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1160545208
@@ -2631,7 +2656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.43400002, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.74288535}
-  m_AnchoredPosition: {x: 0.7120056, y: -3.0910034}
+  m_AnchoredPosition: {x: 0.71203613, y: -3.0910034}
   m_SizeDelta: {x: -1.4229965, y: -9.042999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1175872023
@@ -4152,7 +4177,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690131242}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4164,10 +4189,10 @@ RectTransform:
   - {fileID: 1175872022}
   m_Father: {fileID: 1476991516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -547, y: 255.03}
-  m_SizeDelta: {x: -1496.311, y: -774.56}
+  m_AnchorMin: {x: 0.08710418, y: 0.58962417}
+  m_AnchorMax: {x: 0.37562498, y: 0.8902256}
+  m_AnchoredPosition: {x: -33, y: 9.261688}
+  m_SizeDelta: {x: -108.58203, y: -45.62561}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1690131244
 MonoBehaviour:
@@ -4762,11 +4787,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 45855580}
         m_TargetAssemblyTypeName: FightingButtonsManager, Assembly-CSharp
-        m_MethodName: OnFleePressedNo
-        m_Mode: 1
+        m_MethodName: ClosePanel
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2147270137}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5603,7 +5628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -34, y: -65.87695}
+  m_AnchoredPosition: {x: -34.00006, y: -65.87695}
   m_SizeDelta: {x: -1370.991, y: -132.74365}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118301166
@@ -5685,7 +5710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2147270138
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5705,7 +5730,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -34, y: 509}
+  m_AnchoredPosition: {x: -34.00006, y: 509}
   m_SizeDelta: {x: -1213.593, y: 68.204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2147270139

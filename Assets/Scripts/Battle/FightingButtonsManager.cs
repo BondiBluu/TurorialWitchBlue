@@ -23,30 +23,9 @@ public class FightingButtonsManager : MonoBehaviour
         magicPanel.SetActive(false);
     }
 
-    public void OnAttackPressed()
-    {
-        //TODO: bring up enemy buttons to attack
-    }
-    public void OnMagicPressed()
-    {
-        OpenPanel(magicPanel);
-        //TODO: generate buttons for character moves
-    }
-    public void OnStatusPressed()
-    {
-        statusPanel.SetActive(true);
-    }
-    public void OnFleePressed()
-    {
-        OpenPanel(fleePanel);
-    }
     public void OnFleePressedYes()
     {
         
-    }
-    public void OnFleePressedNo()
-    {
-        ClosePanel(fleePanel);
     }
     public void OpenPanel(GameObject panel)
     {
