@@ -70,12 +70,13 @@ public class BattleManager : MonoBehaviour
     //TODO: see if any player station is full. If not, make that  where the next familiar goes
     public void CreateFamiliar()
     {
+        int numberOfFamiliars = UnityEngine.Random.Range(0, familiarList.Count);
         foreach(Transform station in playerStations)
         {
             if(station != null && station.childCount == 0)
             {
                 GameObject friendlyGO = InstantiateFighters(playerPrefab, station);
-                friendlyGO.GetComponent<FighterBattleData>().SetupData(familiarList[0]);  
+                friendlyGO.GetComponent<FighterBattleData>().SetupData(familiarList[numberOfFamiliars]);  
                 break;
             }
         }
