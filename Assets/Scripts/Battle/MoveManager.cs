@@ -1,6 +1,7 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MoveManager : MonoBehaviour
@@ -19,6 +20,7 @@ public class MoveManager : MonoBehaviour
     
     void Start()
     {
+        HideMoveInfo();
         battlePlayerManager = FindAnyObjectByType<BattlePlayerManager>();
         fightingButtonsManager = FindAnyObjectByType<FightingButtonsManager>();
     }
@@ -32,6 +34,21 @@ public class MoveManager : MonoBehaviour
             if(battlePlayerManager.playerSO.Level >= move.MoveLevelLearned)
             {
                 GameObject moveButton = Instantiate(moveButtonPrefab, magicContainer);
+
+                moveButton.GetComponentInChildren<TMP_Text>().text = move.MoveName;
+
+                //add hover logic
+                EventTrigger trigger = moveButton.AddComponent<EventTrigger>();
+
+                EventTrigger.Entry entry = new EventTrigger.Entry();
+                entry.eventID = EventTriggerType.PointerEnter;
+                entry.callback.AddListener(_ => ShowMoveInfo());
+                trigger.triggers.Add(entry);
+
+                EventTrigger.Entry exit = new EventTrigger.Entry();
+                exit.eventID = EventTriggerType.PointerExit;
+                exit.callback.AddListener(_ => HideMoveInfo());
+                trigger.triggers.Add(exit);
             }
         }
     }
@@ -42,5 +59,14 @@ public class MoveManager : MonoBehaviour
         {
             Destroy(button.gameObject);
         }
+    }
+
+    public void ShowMoveInfo()
+    {
+        magicDescPanel.SetActive(true);
+    }
+    public void HideMoveInfo()
+    {
+        magicDescPanel.SetActive(false);
     }
 }
