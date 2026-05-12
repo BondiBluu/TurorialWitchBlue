@@ -7,7 +7,7 @@ public class FightingButtonsManager : MonoBehaviour
     [SerializeField] Button magicSkillButton; //magical attack. drains MP
     [SerializeField] Button statusButton;
     [SerializeField] Button fleeButton;
-    [SerializeField] GameObject magicPanel;
+    public GameObject magicPanel;
     [SerializeField] GameObject statusPanel;
     [SerializeField] GameObject fleePanel;
  
