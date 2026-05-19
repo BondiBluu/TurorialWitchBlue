@@ -1,18 +1,49 @@
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+
+//sets up all data from UI to where fighters should stand at the beginning of the match
 
 public class BattleSetup : MonoBehaviour
 {
+    CharacterStatusManager characterStatusManager;
     public List<FighterSO> familiarList;
+    [SerializeField] FighterSO guaranteedEnemy;
+
 
     [Header(" Stations")]
     [SerializeField] Transform[] playerStations;
 
     [SerializeField] Transform[] enemyStations;
+    [SerializeField] Transform enemyContainer;
+    [SerializeField] Transform playerMPContainer;
 
     [Header("Prefabs")]
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
+    [SerializeField] GameObject uIContainerPrefab;
+    [SerializeField] GameObject playerUIContainer;
+    [SerializeField] GameObject diamondPrefab;
+    [SerializeField] GameObject emptyDiamondPrefab;
+
+    [Header("To be deleted when testing is over")]
+    public List<FighterSO> enemyList;
+    public FighterSO playerStats;
+
+    void Awake()
+    {
+        characterStatusManager = FindAnyObjectByType<CharacterStatusManager>();
+    }
+
+    public void SetUpAll()
+    {
+        CreateNumberOfEnemies(enemyList, guaranteedEnemy);
+        InstantiatePlayerAndAlly(playerStats);
+        SetUpCharacterStats();
+    }
+
 
     /*create a random number of enemies
     first enemy's fighter data will always be the guaranteed attribute player ran into
@@ -36,6 +67,7 @@ public class BattleSetup : MonoBehaviour
         {
             case CharacterAlliance.Player:
                 InstantiateAndSetUp(playerPrefab, playerStations[0], fighter);
+                InstantiateUI(fighter, playerUIContainer);
                 break;
             case CharacterAlliance.Familiar:
                 CreateFamiliar();
@@ -52,18 +84,52 @@ public class BattleSetup : MonoBehaviour
         {
             if (station != null && station.childCount == 0)
             {
+                //TODO: change random range to the actual familiar that's supposed to be there
                 InstantiateAndSetUp(playerPrefab, station, familiarList[Random.Range(0, familiarList.Count)]);
                 break;
             }
         }
     }
 
-    //instantiates prefabs to their position and TODO sets up their stats
-    private void InstantiateAndSetUp(GameObject fighter, Transform fighterPosition, FighterSO data)
+    public void SetUpCharacterStats()
     {
-        Debug.Log("Instantiating");
-        GameObject go = Instantiate(fighter, fighterPosition.position, Quaternion.identity, fighterPosition);
-        go.GetComponent<FighterBattleData>().SetupData(data);
+        characterStatusManager.BattleStartStats(playerStats);
     }
 
+    //instantiates prefabs to their position 
+    // If the object being instantiated is a fighter (has the FighterBattleData script), sets up their stats.  
+    private void InstantiateAndSetUp(GameObject prefab, Transform position, FighterSO data, GameObject uiContainer = null)
+    {
+        Debug.Log("Instantiating");
+        GameObject go = Instantiate(prefab, position.position, Quaternion.identity, position);
+
+        if (go.TryGetComponent(out FighterBattleData fightersData))
+        {
+            fightersData.SetupData(data);
+            Debug.Log("This is a fighter");
+        }
+        else
+        {
+            // if ()
+            // {
+            //     InstantiateUI()
+            // }
+            Debug.Log("This is not a fighter");
+
+        }
+    }
+
+    private void InstantiateUI(FighterSO fighterData, GameObject uiContainer = null)
+    {
+        if (uiContainer != null)
+        {
+            TMP_Text fighterName = uiContainer.GetComponentInChildren<TMP_Text>();
+            fighterName.text = fighterData.CharacterName;
+        }
+        else
+        {
+            TMP_Text fighterName = uIContainerPrefab.GetComponentInChildren<TMP_Text>();
+            fighterName.text = fighterData.CharacterName;
+        }
+    }
 }

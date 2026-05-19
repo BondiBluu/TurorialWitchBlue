@@ -169,13 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d7724b825cde84a80b88824dfffd48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guaranteedEnemy: {fileID: 11400000, guid: ec95fef50ac681a4e91b1159e178db33, type: 2}
-  enemyList:
-  - {fileID: 11400000, guid: ec95fef50ac681a4e91b1159e178db33, type: 2}
-  - {fileID: 11400000, guid: b32adede9cb818842acb097f8c23d75c, type: 2}
-  - {fileID: 11400000, guid: 2f7194ce6ea94314a91f6acce2d693be, type: 2}
-  - {fileID: 11400000, guid: 75352bd54b82e26478f5d14c682aabf4, type: 2}
-  playerStats: {fileID: 11400000, guid: 9022e7df1a3f2e34bbc16919b69fc11f, type: 2}
 --- !u!114 &45855580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,11 +251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f853720edb8949441b8e0236862775dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIContainerPrefab: {fileID: 6962942726892598253}
-  enemyContainer: {fileID: 354909291}
-  diamondPrefab: {fileID: 8897990744710248283, guid: 016285a43cdd1dc489abcd1e76b94af0, type: 3}
-  emptyDiamondPrefab: {fileID: 1279693657419741203, guid: 6b69763d57f9ebf4599070b2edd8b346, type: 3}
-  playerMPContainer: {fileID: 1730836242}
 --- !u!114 &45855585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +269,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6dab748466f782a41beef7b636883504, type: 2}
   - {fileID: 11400000, guid: 460cd82d3244c954b9b0e9c34b4eb2fe, type: 2}
   - {fileID: 11400000, guid: 9c10e8944f885e64593b7b215fbcfa5c, type: 2}
+  guaranteedEnemy: {fileID: 11400000, guid: ec95fef50ac681a4e91b1159e178db33, type: 2}
   playerStations:
   - {fileID: 1864531393}
   - {fileID: 386432142}
@@ -291,8 +280,20 @@ MonoBehaviour:
   - {fileID: 1573631948}
   - {fileID: 1310916544}
   - {fileID: 1386915791}
+  enemyContainer: {fileID: 354909291}
+  playerMPContainer: {fileID: 1730836242}
   playerPrefab: {fileID: 4717700669529687285, guid: 80b32b9c396c12047a575fc711aa61fa, type: 3}
   enemyPrefab: {fileID: 8796925188532428108, guid: af6b09164693a0241874b1cc942dfd63, type: 3}
+  uIContainerPrefab: {fileID: 2324623978414564923, guid: 4e505b1082b5a164e8774470353390a9, type: 3}
+  playerUIContainer: {fileID: 6962942726892598253}
+  diamondPrefab: {fileID: 8897990744710248283, guid: 016285a43cdd1dc489abcd1e76b94af0, type: 3}
+  emptyDiamondPrefab: {fileID: 1279693657419741203, guid: 6b69763d57f9ebf4599070b2edd8b346, type: 3}
+  enemyList:
+  - {fileID: 11400000, guid: ec95fef50ac681a4e91b1159e178db33, type: 2}
+  - {fileID: 11400000, guid: b32adede9cb818842acb097f8c23d75c, type: 2}
+  - {fileID: 11400000, guid: 2f7194ce6ea94314a91f6acce2d693be, type: 2}
+  - {fileID: 11400000, guid: 75352bd54b82e26478f5d14c682aabf4, type: 2}
+  playerStats: {fileID: 11400000, guid: 9022e7df1a3f2e34bbc16919b69fc11f, type: 2}
 --- !u!1 &59633788
 GameObject:
   m_ObjectHideFlags: 0
