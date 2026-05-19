@@ -15,7 +15,6 @@ public class BattleSetup : MonoBehaviour
 
     [Header(" Stations")]
     [SerializeField] Transform[] playerStations;
-
     [SerializeField] Transform[] enemyStations;
     [SerializeField] Transform enemyContainer;
     [SerializeField] Transform playerMPContainer;
@@ -23,8 +22,7 @@ public class BattleSetup : MonoBehaviour
     [Header("Prefabs")]
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
-    [SerializeField] GameObject uIContainerPrefab;
-    [SerializeField] GameObject playerUIContainer;
+    [SerializeField] GameObject uIPrefab;
     [SerializeField] GameObject diamondPrefab;
     [SerializeField] GameObject emptyDiamondPrefab;
 
@@ -67,7 +65,6 @@ public class BattleSetup : MonoBehaviour
         {
             case CharacterAlliance.Player:
                 InstantiateAndSetUp(playerPrefab, playerStations[0], fighter);
-                InstantiateUI(fighter, playerUIContainer);
                 break;
             case CharacterAlliance.Familiar:
                 CreateFamiliar();
@@ -98,7 +95,7 @@ public class BattleSetup : MonoBehaviour
 
     //instantiates prefabs to their position 
     // If the object being instantiated is a fighter (has the FighterBattleData script), sets up their stats.  
-    private void InstantiateAndSetUp(GameObject prefab, Transform position, FighterSO data, GameObject uiContainer = null)
+    private void InstantiateAndSetUp(GameObject prefab, Transform position, FighterSO data)
     {
         Debug.Log("Instantiating");
         GameObject go = Instantiate(prefab, position.position, Quaternion.identity, position);
@@ -110,26 +107,12 @@ public class BattleSetup : MonoBehaviour
         }
         else
         {
-            // if ()
-            // {
-            //     InstantiateUI()
-            // }
-            Debug.Log("This is not a fighter");
+            //TODO: Instantiate UIs
 
         }
     }
 
-    private void InstantiateUI(FighterSO fighterData, GameObject uiContainer = null)
+    private void InstantiateUI(FighterSO fighterData, GameObject uiContainer)
     {
-        if (uiContainer != null)
-        {
-            TMP_Text fighterName = uiContainer.GetComponentInChildren<TMP_Text>();
-            fighterName.text = fighterData.CharacterName;
-        }
-        else
-        {
-            TMP_Text fighterName = uIContainerPrefab.GetComponentInChildren<TMP_Text>();
-            fighterName.text = fighterData.CharacterName;
-        }
     }
 }

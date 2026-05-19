@@ -284,8 +284,7 @@ MonoBehaviour:
   playerMPContainer: {fileID: 1730836242}
   playerPrefab: {fileID: 4717700669529687285, guid: 80b32b9c396c12047a575fc711aa61fa, type: 3}
   enemyPrefab: {fileID: 8796925188532428108, guid: af6b09164693a0241874b1cc942dfd63, type: 3}
-  uIContainerPrefab: {fileID: 2324623978414564923, guid: 4e505b1082b5a164e8774470353390a9, type: 3}
-  playerUIContainer: {fileID: 6962942726892598253}
+  uIPrefab: {fileID: 2324623978414564923, guid: 4e505b1082b5a164e8774470353390a9, type: 3}
   diamondPrefab: {fileID: 8897990744710248283, guid: 016285a43cdd1dc489abcd1e76b94af0, type: 3}
   emptyDiamondPrefab: {fileID: 1279693657419741203, guid: 6b69763d57f9ebf4599070b2edd8b346, type: 3}
   enemyList:
@@ -6351,11 +6350,6 @@ PrefabInstance:
 --- !u!224 &6962942726892598252 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5743787652050429830, guid: 4e505b1082b5a164e8774470353390a9, type: 3}
-  m_PrefabInstance: {fileID: 6962942726892598251}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6962942726892598253 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2324623978414564923, guid: 4e505b1082b5a164e8774470353390a9, type: 3}
   m_PrefabInstance: {fileID: 6962942726892598251}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

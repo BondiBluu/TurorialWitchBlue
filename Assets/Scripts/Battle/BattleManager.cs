@@ -31,6 +31,7 @@ public class BattleManager : MonoBehaviour
         if(battleState == BattleState.BATTLESTART)
         {
             battleSetup.SetUpAll();
+            battleState = BattleState.PLAYERTURN;
         }  
     }  
 
