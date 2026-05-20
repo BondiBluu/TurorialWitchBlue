@@ -248,6 +248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5743787652050429830}
+  - component: {fileID: -531226378926604301}
   m_Layer: 5
   m_Name: UIContainer
   m_TagString: Untagged
@@ -276,6 +277,18 @@ RectTransform:
   m_AnchoredPosition: {x: 1.0875, y: 114.56}
   m_SizeDelta: {x: 889.6, y: 119.89}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &-531226378926604301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2324623978414564923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f2b39e2a6154644b825747919ff5b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3910953542692622812
 GameObject:
   m_ObjectHideFlags: 0

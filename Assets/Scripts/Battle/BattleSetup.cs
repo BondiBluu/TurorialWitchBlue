@@ -132,8 +132,8 @@ public class BattleSetup : MonoBehaviour
         }
         
         GameObject panel = Instantiate(uIPrefab, container);
+        
 
-        TMP_Text characterName = panel.transform.GetChild(0).GetComponent<TMP_Text>();
-        characterName.text = fighterData.CharacterName;
+        
     }
 }
