@@ -17,6 +17,7 @@ public class BattleSetup : MonoBehaviour
     [SerializeField] Transform[] playerStations;
     [SerializeField] Transform[] enemyStations;
     [SerializeField] Transform enemyContainer;
+    [SerializeField] Transform playerUIContainer;
     [SerializeField] Transform playerMPContainer;
 
     [Header("Prefabs")]
@@ -56,6 +57,7 @@ public class BattleSetup : MonoBehaviour
             FighterSO data = i == 0 ? guaranteedEnemy : enemyList[Random.Range(0, enemyList.Count)];
 
             InstantiateAndSetUp(enemyPrefab, enemyStations[i], data);
+            InstantiateUI(data);
         }
     }
 
@@ -65,6 +67,7 @@ public class BattleSetup : MonoBehaviour
         {
             case CharacterAlliance.Player:
                 InstantiateAndSetUp(playerPrefab, playerStations[0], fighter);
+                InstantiateUI(fighter);
                 break;
             case CharacterAlliance.Familiar:
                 CreateFamiliar();
@@ -81,8 +84,10 @@ public class BattleSetup : MonoBehaviour
         {
             if (station != null && station.childCount == 0)
             {
+                FighterSO data = familiarList[Random.Range(0, familiarList.Count)];
                 //TODO: change random range to the actual familiar that's supposed to be there
-                InstantiateAndSetUp(playerPrefab, station, familiarList[Random.Range(0, familiarList.Count)]);
+                InstantiateAndSetUp(playerPrefab, station, data);
+                InstantiateUI(data);
                 break;
             }
         }
@@ -100,19 +105,35 @@ public class BattleSetup : MonoBehaviour
         Debug.Log("Instantiating");
         GameObject go = Instantiate(prefab, position.position, Quaternion.identity, position);
 
-        if (go.TryGetComponent(out FighterBattleData fightersData))
-        {
-            fightersData.SetupData(data);
-            Debug.Log("This is a fighter");
-        }
-        else
-        {
-            //TODO: Instantiate UIs
+        go.GetComponent<FighterBattleData>().SetupData(data);
 
-        }
     }
 
-    private void InstantiateUI(FighterSO fighterData, GameObject uiContainer)
+    private void InstantiateUI(FighterSO fighterData)
     {
+        Transform container;
+
+        switch (fighterData.Alignment)
+        {
+            case CharacterAlliance.Player:
+                Debug.Log("Player");
+                container = playerUIContainer;
+                break;
+            case CharacterAlliance.Familiar:
+                Debug.Log("Familiar");
+                container = playerMPContainer;
+                break;
+            case CharacterAlliance.Enemy:
+                container = enemyContainer;
+                break;
+            default:
+                Debug.LogWarning($"Unhandled alignment: {fighterData.Alignment}");
+                return;
+        }
+        
+        GameObject panel = Instantiate(uIPrefab, container);
+
+        TMP_Text characterName = panel.transform.GetChild(0).GetComponent<TMP_Text>();
+        characterName.text = fighterData.CharacterName;
     }
 }
