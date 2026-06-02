@@ -17,6 +17,7 @@ public class BattleSetup : MonoBehaviour
     [SerializeField] Transform[] playerStations;
     [SerializeField] Transform[] enemyStations;
     [SerializeField] Transform enemyContainer;
+    [SerializeField] Transform familiarContainer;
     [SerializeField] Transform playerUIContainer;
     [SerializeField] Transform playerMPContainer;
 
@@ -121,7 +122,7 @@ public class BattleSetup : MonoBehaviour
                 break;
             case CharacterAlliance.Familiar:
                 Debug.Log("Familiar");
-                container = playerMPContainer;
+                container = familiarContainer;
                 break;
             case CharacterAlliance.Enemy:
                 container = enemyContainer;
@@ -132,6 +133,15 @@ public class BattleSetup : MonoBehaviour
         }
         
         GameObject panel = Instantiate(uIPrefab, container);
+        FighterUIPanel ui = panel.GetComponent<FighterUIPanel>();
+
+        ui.characterName.text = fighterData.CharacterName;
+        
+        ui.delayHealthFill.maxValue = fighterData.HP;
+        ui.healthFill.maxValue = fighterData.HP;
+
+        ui.healthFill.value = fighterData.HP;
+        ui.delayHealthFill.value = fighterData.HP;
         
 
         
