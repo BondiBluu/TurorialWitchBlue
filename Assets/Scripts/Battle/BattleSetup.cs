@@ -41,7 +41,9 @@ public class BattleSetup : MonoBehaviour
     {
         CreateNumberOfEnemies(enemyList, guaranteedEnemy);
         InstantiatePlayerAndAlly(playerStats);
+        InstantiateMP();
         SetUpCharacterStats();
+        
     }
 
 
@@ -141,9 +143,19 @@ public class BattleSetup : MonoBehaviour
         ui.healthFill.maxValue = fighterData.HP;
 
         ui.healthFill.value = fighterData.HP;
-        ui.delayHealthFill.value = fighterData.HP;
-        
+        ui.delayHealthFill.value = fighterData.HP;        
+    }
 
-        
+    public void InstantiateMP()
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            Instantiate(diamondPrefab, playerMPContainer);
+        }
+
+         for(int i = 0; i < 5; i++)
+        {
+            Instantiate(emptyDiamondPrefab, playerMPContainer);
+        }
     }
 }
