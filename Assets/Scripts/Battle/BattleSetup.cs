@@ -166,8 +166,8 @@ public class BattleSetup : MonoBehaviour
         }
     }
 
-    //clears any existing buttons in the targetContainer and spawns one move button per target
-    //in the provided list.
+    /*clears any existing buttons in the targetContainer and spawns one move button per target
+    in the given list*/
     public void UpdateTargets(List<FighterSO> listOfTargets)
     {
         moveManager.ClearMoves(targetContainer);
@@ -175,6 +175,8 @@ public class BattleSetup : MonoBehaviour
         foreach(FighterSO target in listOfTargets)
         {
             GameObject targetButton = Instantiate(moveManager.moveButtonPrefab, targetContainer);
+
+            targetButton.GetComponentInChildren<TMP_Text>().text = target.CharacterName;
         }
     }
 }
