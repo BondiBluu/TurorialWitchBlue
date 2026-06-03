@@ -9,7 +9,10 @@ using UnityEngine.UI;
 public class BattleSetup : MonoBehaviour
 {
     CharacterStatusManager characterStatusManager;
+    MoveManager moveManager;
     public List<FighterSO> familiarList;
+    public List<FighterSO> familiarsCurrentlyInBattle;
+    public List<FighterSO> enemiesCurrentlyInBattle;
     [SerializeField] FighterSO guaranteedEnemy;
 
 
@@ -20,6 +23,7 @@ public class BattleSetup : MonoBehaviour
     [SerializeField] Transform familiarContainer;
     [SerializeField] Transform playerUIContainer;
     [SerializeField] Transform playerMPContainer;
+    [SerializeField] Transform targetContainer;
 
     [Header("Prefabs")]
     public GameObject playerPrefab;
@@ -35,6 +39,7 @@ public class BattleSetup : MonoBehaviour
     void Awake()
     {
         characterStatusManager = FindAnyObjectByType<CharacterStatusManager>();
+        moveManager = FindAnyObjectByType<MoveManager>();
     }
 
     public void SetUpAll()
@@ -43,7 +48,7 @@ public class BattleSetup : MonoBehaviour
         InstantiatePlayerAndAlly(playerStats);
         InstantiateMP();
         SetUpCharacterStats();
-        
+
     }
 
 
@@ -61,7 +66,9 @@ public class BattleSetup : MonoBehaviour
 
             InstantiateAndSetUp(enemyPrefab, enemyStations[i], data);
             InstantiateUI(data);
+            enemiesCurrentlyInBattle.Add(data);
         }
+        UpdateTargets(enemiesCurrentlyInBattle);
     }
 
     public void InstantiatePlayerAndAlly(FighterSO fighter)
@@ -133,29 +140,41 @@ public class BattleSetup : MonoBehaviour
                 Debug.LogWarning($"Unhandled alignment: {fighterData.Alignment}");
                 return;
         }
-        
+
         GameObject panel = Instantiate(uIPrefab, container);
         FighterUIPanel ui = panel.GetComponent<FighterUIPanel>();
 
         ui.characterName.text = fighterData.CharacterName;
-        
+
         ui.delayHealthFill.maxValue = fighterData.HP;
         ui.healthFill.maxValue = fighterData.HP;
 
         ui.healthFill.value = fighterData.HP;
-        ui.delayHealthFill.value = fighterData.HP;        
+        ui.delayHealthFill.value = fighterData.HP;
     }
 
     public void InstantiateMP()
     {
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
             Instantiate(diamondPrefab, playerMPContainer);
         }
 
-         for(int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++)
         {
             Instantiate(emptyDiamondPrefab, playerMPContainer);
+        }
+    }
+
+    //clears any existing buttons in the targetContainer and spawns one move button per target
+    //in the provided list.
+    public void UpdateTargets(List<FighterSO> listOfTargets)
+    {
+        moveManager.ClearMoves(targetContainer);
+
+        foreach(FighterSO target in listOfTargets)
+        {
+            GameObject targetButton = Instantiate(moveManager.moveButtonPrefab, targetContainer);
         }
     }
 }

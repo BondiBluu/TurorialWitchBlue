@@ -12,7 +12,7 @@ public class MoveManager : MonoBehaviour
     [SerializeField] TMP_Text movePwr;
     [SerializeField] TMP_Text moveDesc;
     [SerializeField] TMP_Text moveMP;
-    [SerializeField] GameObject moveButtonPrefab;
+    public GameObject moveButtonPrefab;
     BattlePlayerManager battlePlayerManager;
     FightingButtonsManager fightingButtonsManager;
 

@@ -4668,7 +4668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.35738632}
   m_AnchorMax: {x: 1, y: 0.6873144}
-  m_AnchoredPosition: {x: 1.1700134, y: 7.163002}
+  m_AnchoredPosition: {x: 1.170044, y: 7.1629944}
   m_SizeDelta: {x: -28.618, y: -15.196}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1730836243
@@ -5518,11 +5518,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 45855580}
         m_TargetAssemblyTypeName: FightingButtonsManager, Assembly-CSharp
-        m_MethodName: OnStatusPressed
-        m_Mode: 1
+        m_MethodName: OpenPanel
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1578412344}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
