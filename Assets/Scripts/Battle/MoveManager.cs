@@ -23,6 +23,7 @@ public class MoveManager : MonoBehaviour
         fightingButtonsManager = FindAnyObjectByType<FightingButtonsManager>();
     }
 
+    //if the player's level is more than or equal to the move, display move button
     public void DisplayMoves()
     {
         ClearMoves(magicContainer);
@@ -35,7 +36,7 @@ public class MoveManager : MonoBehaviour
 
                 moveButton.GetComponentInChildren<TMP_Text>().text = move.MoveName;
 
-                //add hover logic
+                //add hover logic so move
                 MoveSO currentMove = move;
                 EventTrigger trigger = moveButton.AddComponent<EventTrigger>();
 
@@ -52,6 +53,7 @@ public class MoveManager : MonoBehaviour
         }
     }
 
+    //clear all moves from container
     public void ClearMoves(Transform container)
     {
         foreach (Transform button in container)
@@ -60,6 +62,7 @@ public class MoveManager : MonoBehaviour
         }
     }
 
+    //show move desc and stats
     public void ShowMoveInfo(MoveSO move)
     {
         magicDescPanel.SetActive(true);

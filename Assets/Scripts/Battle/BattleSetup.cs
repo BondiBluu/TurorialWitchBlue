@@ -42,6 +42,7 @@ public class BattleSetup : MonoBehaviour
         moveManager = FindAnyObjectByType<MoveManager>();
     }
 
+    //instantiate the enemies, players, familiars with their mp and stats
     public void SetUpAll()
     {
         CreateNumberOfEnemies(enemyList, guaranteedEnemy);
@@ -153,6 +154,7 @@ public class BattleSetup : MonoBehaviour
         ui.delayHealthFill.value = fighterData.HP;
     }
 
+    //TODO: change mp to appropriate numbers
     public void InstantiateMP()
     {
         for (int i = 0; i < 3; i++)
