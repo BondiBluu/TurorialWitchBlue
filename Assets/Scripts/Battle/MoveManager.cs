@@ -23,7 +23,7 @@ public class MoveManager : MonoBehaviour
         fightingButtonsManager = FindAnyObjectByType<FightingButtonsManager>();
     }
 
-    //if the player's level is more than or equal to the move, display move button
+    //if the player's level is more than or equal to the move, display move buttons in container and change its name
     public void DisplayMoves()
     {
         ClearMoves(magicContainer);
@@ -62,7 +62,7 @@ public class MoveManager : MonoBehaviour
         }
     }
 
-    //show move desc and stats
+    //show move name, desc, and stats
     public void ShowMoveInfo(MoveSO move)
     {
         magicDescPanel.SetActive(true);

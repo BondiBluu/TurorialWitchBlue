@@ -55,7 +55,7 @@ public class BattleSetup : MonoBehaviour
 
     /*create a random number of enemies
     first enemy's fighter data will always be the guaranteed attribute player ran into
-    all enemy fighter data will be random*/
+    all other enemy fighter data will be random*/
     public void CreateNumberOfEnemies(List<FighterSO> enemyList, FighterSO guaranteedEnemy)
     {
         int numberOfEnemies = Random.Range(1, 4);
@@ -72,6 +72,7 @@ public class BattleSetup : MonoBehaviour
         UpdateTargets(enemiesCurrentlyInBattle);
     }
 
+    //instantiates the player and familiars in the battle
     public void InstantiatePlayerAndAlly(FighterSO fighter)
     {
         switch (fighter.Alignment)
@@ -87,8 +88,9 @@ public class BattleSetup : MonoBehaviour
         Debug.Log("Instantiating friendly fighters");
     }
 
+
     //instantiate and set up fighter data for familiars for each familiar made
-    //TODO: see if any player station is full. If not, make that  where the next familiar goes
+    //TODO: see if any player station is full. If not, make that where the next familiar goes
     public void CreateFamiliar()
     {
         foreach (Transform station in playerStations)
@@ -104,6 +106,7 @@ public class BattleSetup : MonoBehaviour
         }
     }
 
+    //sets up the character stats for the player at the beginning of the battle
     public void SetUpCharacterStats()
     {
         characterStatusManager.BattleStartStats(playerStats);
@@ -120,6 +123,9 @@ public class BattleSetup : MonoBehaviour
 
     }
 
+    //instantiates the fighter data in the container the fighter will be displayed in and sets up their ui
+    //displays the fighter's name, health, and mp in the ui
+    //if alignment doesn't exist, logs a warning and returns
     private void InstantiateUI(FighterSO fighterData)
     {
         Transform container;
@@ -154,7 +160,8 @@ public class BattleSetup : MonoBehaviour
         ui.delayHealthFill.value = fighterData.HP;
     }
 
-    //TODO: change mp to appropriate numbers
+    //
+    // TODO: change mp to appropriate numbers
     public void InstantiateMP()
     {
         for (int i = 0; i < 3; i++)
