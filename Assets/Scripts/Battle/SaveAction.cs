@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//saves the action of the fighter for the turn and adds it to a list of actions to be executed in order
 public class SaveAction : MonoBehaviour
 {
     List<BattleAction> actionQueue = new List<BattleAction>();

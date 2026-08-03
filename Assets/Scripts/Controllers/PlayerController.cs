@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
         interact.action.started -= OnInteract;
     }
 
+    //when the player presses the interact button, check if the player is in range of an interactable object. If so, play the dialogue for that object
     private void OnInteract(InputAction.CallbackContext context)
     {
         if (dialogueManager.IsDialogueActive())

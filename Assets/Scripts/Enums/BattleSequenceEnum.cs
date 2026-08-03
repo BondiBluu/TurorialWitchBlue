@@ -1,3 +1,4 @@
+//represents the different states of a battle
 public enum BattleState
 {
     BATTLESTART,

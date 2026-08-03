@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI; 
 
 
-
+//manages the dialogue system in the game
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private Canvas dialogueCanvas;
@@ -19,6 +19,7 @@ public class DialogueManager : MonoBehaviour
 
     private static DialogueManager instance;
 
+    //singleton pattern to ensure only one instance of the DialogueManager exists
     void Awake()
     {
 
@@ -36,6 +37,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    //displays the character's dialogue, displaying it in the dialogue panel
     public void StartDialogue(DialogueSO chosenDialogue)
     {
         currentDialogue = chosenDialogue;
@@ -45,6 +47,8 @@ public class DialogueManager : MonoBehaviour
         DisplayDialogue();
     }
 
+    //displays the current line of dialogue and the character's name and image
+    //checks if the character image is null and hides the image if it is
      public void DisplayDialogue()
     {
         DialogueLines lines = currentDialogue.dialogueLines[currentIndex];
@@ -54,6 +58,7 @@ public class DialogueManager : MonoBehaviour
         CheckIfCharacterImageIsNull(characterImage2, lines.characterSprite2);
     }
 
+    //goes to the next line of dialogue or turns off the dialogue if there are no more lines
     public void NextLine()
     {
         currentIndex++;
@@ -69,6 +74,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    //checks if the character image is null and hides the image if it is
     public void CheckIfCharacterImageIsNull(Image characterHolder, Sprite imageForCharacter)
     {
         
